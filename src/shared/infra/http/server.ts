@@ -4,9 +4,10 @@ import cors from 'cors';
 import 'express-async-errors';
 
 import routes from './routes';
-import './database'
-import uploadConfig from './config/upload';
-import AppError from './erros/AppError';
+import '@shared/infra/typeorm'
+import uploadConfig from '@config/upload';
+import AppError from '@shared/erros/AppError';
+
 
 const app = express();
 
@@ -31,6 +32,6 @@ app.use((err: Error, request: Request, response: Response, next: NextFunction) =
     });
 });
 
-app.listen(3333, ()=>{
+app.listen(3333, () => {
     console.log('Server starded on port 3333');
 });
