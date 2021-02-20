@@ -15,6 +15,14 @@
     "plugins": [
         "@typescript-eslint"
     ],
+    "@typescript-eslint/naming-convention": [
+        "error",
+        {
+          "selector": "interface",
+          "prefix": ["I"],
+          "format": ["PascalCase"]
+        }
+      ],
     "rules": {
         "import/extensions": [
             "error",
