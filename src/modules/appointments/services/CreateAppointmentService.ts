@@ -25,10 +25,7 @@ class CreateAppointmentService {
         }
 
         // Criamos o objeto, a instância
-        const appointment = appointmentRepository.create({provider_id, date: appointmentDate});
-
-        // Salvamos no banco
-        await appointmentRepository.save(appointment);
+        const appointment = await appointmentRepository.create({provider_id, date: appointmentDate});
 
         return appointment;
 
